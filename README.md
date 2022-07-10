@@ -1,8 +1,9 @@
 # Walk the Dog
 
-* Adapted from "Game Development with Rust & WebAssembly" by Eric Smith
+* Adapted from the book "Game Development with Rust & WebAssembly" by Eric Smith
   * I typed in this code from following the directions in this book
-* You can see the code running in the browser here:
+  * https://github.com/PacktPublishing/Game-Development-with-Rust-and-WebAssembly/
+* You can see the Rust code compiled to WebAssembly and running in the browser
   * https://www.gamespawn.com/arcade/walk-the-dog/
 
 ## How to install
