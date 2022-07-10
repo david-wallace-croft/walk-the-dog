@@ -1,40 +1,81 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta charset="UTF-8">
-  <title>My Rust + Webpack project!</title>
-  <link
-    href="styles.css"
-    rel="stylesheet"
-  >
-  <link
-    rel="preload"
-    as="image"
-    href="Button.svg"
-  >
-  <link
-    rel="preload"
-    as="font"
-    href="kenney_future_narrow-webfont.woff2"
-  >
+<meta charset="UTF-8">
+<title>
+Walk the Dog \ Arcade \ GameSpawn
+</title>
+<link
+  href="styles.css"
+  rel="stylesheet"
+>
+<link
+  rel="preload"
+  as="image"
+  href="Button.svg"
+>
+<link
+  rel="preload"
+  as="font"
+  href="kenney_future_narrow-webfont.woff2"
+>
 </head>
-
 <body>
-  <div
-    id="ui"
-    style="position:absolute"
-  >
-  </div>
-  <canvas
-    height="600"
-    id="canvas"
-    tabindex="0"
-    width="600"
-  >
-    Your browser does not support the canvas.
-  </canvas>
-  <script src="index.js"></script>
+<div
+  class="app-wrapper">
+<div>
+<div
+  id="ui"
+  style="position:absolute"
+>
+</div>
+<canvas
+  height="600"
+  id="canvas"
+  tabindex="0"
+  width="600"
+>
+Your browser does not support the canvas.
+</canvas>
+<script
+  src="index.js"></script>
+</div>
+<div>
+<h1>
+How to Play
+</h1>
+<ul>
+<li>
+Press the right arrow key to start running
+</li>
+<li>
+Press the spacebar key to jump over obstacles
+</li>
+<li>
+Press the down arrow key to slide under obstacles
+</li>
+</ul>
+<h1>
+Open Source Code
+</h1>
+<ul>
+<li>
+Source code repository:
+<a
+  href="https://github.com/david-wallace-croft/walk-the-dog"
+  target="_blank">
+https://github.com/david-wallace-croft/walk-the-dog</a>
+</li>
+<li>
+Adapted from
+<a
+  href="https://github.com/PacktPublishing/Game-Development-with-Rust-and-WebAssembly/"
+  target="_blank">
+Game Development with Rust & WebAssembly</a>
+by Eric Smith
+</li>
+</ul>
+</div>
+</div>
 </body>
-
 </html>

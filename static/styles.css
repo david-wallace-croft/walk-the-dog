@@ -23,3 +23,8 @@ button:active {
 button:hover {
   background: -158px -60px url('Button.svg');
 }
+
+div.app-wrapper {
+  display: flex;
+  gap: 20px;
+}
