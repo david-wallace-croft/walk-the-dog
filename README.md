@@ -1,3 +1,10 @@
+# Walk the Dog
+
+* Adapted from "Game Development with Rust & WebAssembly" by Eric Smith
+  * I typed in this code from following the directions in this book
+* You can see the code running in the browser here:
+  * https://www.gamespawn.com/arcade/walk-the-dog/
+
 ## How to install
 
 ```sh
