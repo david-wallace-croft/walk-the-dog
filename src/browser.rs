@@ -125,7 +125,8 @@ pub fn find_html_element_by_id(id: &str) -> Result<HtmlElement> {
 }
 
 pub fn find_ui() -> Result<Element> {
-  document().and_then(|doc| {
+  // TODO: Is this called twice on purpose or by accident?
+  document().and_then(|_doc| {
     document().and_then(|doc| {
       doc.get_element_by_id("ui").ok_or_else(|| anyhow!("UI element not found"))
     })

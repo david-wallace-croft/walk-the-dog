@@ -72,7 +72,8 @@ impl GameLoop {
 pub fn add_click_handler(elem: HtmlElement) -> UnboundedReceiver<()> {
   let (mut click_sender, click_receiver) = unbounded();
   let on_click = browser::closure_wrap(Box::new(move || {
-    click_sender.start_send(());
+    let _result: Result<(), futures::channel::mpsc::SendError> =
+      click_sender.start_send(());
   }) as Box<dyn FnMut()>);
   elem.set_onclick(Some(on_click.as_ref().unchecked_ref()));
   on_click.forget();
@@ -442,14 +443,14 @@ impl Audio {
     &self,
     sound: &Sound,
   ) -> Result<()> {
-    sound::play_sound(&self.context, &sound.buffer, sound::Looping::YES)
+    sound::play_sound(&self.context, &sound.buffer, sound::Looping::Yes)
   }
 
   pub fn play_sound(
     &self,
     sound: &Sound,
   ) -> Result<()> {
-    sound::play_sound(&self.context, &sound.buffer, sound::Looping::NO)
+    sound::play_sound(&self.context, &sound.buffer, sound::Looping::No)
   }
 }
 

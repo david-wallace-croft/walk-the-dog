@@ -1200,10 +1200,10 @@ mod red_hat_boy_states {
   }
 }
 
-fn rightmost(obstacle_list: &Vec<Box<dyn Obstacle>>) -> i16 {
+fn rightmost(obstacle_list: &[Box<dyn Obstacle>]) -> i16 {
   obstacle_list
     .iter()
     .map(|obstacle| obstacle.right())
-    .max_by(|x, y| x.cmp(&y))
+    .max_by(|x, y| x.cmp(y))
     .unwrap_or(0)
 }

@@ -51,8 +51,8 @@ pub async fn decode_audio_data(
 }
 
 pub enum Looping {
-  NO,
-  YES,
+  No,
+  Yes,
 }
 
 pub fn play_sound(
@@ -61,7 +61,7 @@ pub fn play_sound(
   looping: Looping,
 ) -> Result<()> {
   let track_source: AudioBufferSourceNode = create_track_source(ctx, buffer)?;
-  if matches!(looping, Looping::YES) {
+  if matches!(looping, Looping::Yes) {
     track_source.set_loop(true);
   }
   // track_source.set_buffer(Some(&buffer));
