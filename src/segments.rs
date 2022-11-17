@@ -37,7 +37,7 @@ static FLOATING_PLATFORM_BOUNDING_BOXES: [Rect; 3] = [
 const FLOATING_PLATFORM_SPRITES: [&str; 3] = [
   "13.png", "14.png", "15.png",
 ];
-const HEIGHT: i16 = 600;
+// const HEIGHT: i16 = 600;
 const LOW_PLATFORM: i16 = 420;
 const HIGH_PLATFORM: i16 = 375;
 const INITIAL_STONE_OFFSET: i16 = 150;
