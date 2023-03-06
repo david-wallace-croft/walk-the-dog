@@ -1,10 +1,10 @@
 # Walk the Dog
 
+* You can see the Rust code compiled to WebAssembly and running in the browser
+  * https://www.GameSpawn.com/arcade/walk-the-dog/
 * Adapted from the book "Game Development with Rust & WebAssembly" by Eric Smith
   * I typed in this code from following the directions in this book
   * https://github.com/PacktPublishing/Game-Development-with-Rust-and-WebAssembly/
-* You can see the Rust code compiled to WebAssembly and running in the browser
-  * https://www.gamespawn.com/arcade/walk-the-dog/
 * Updated using the CroftSoft "Rust-webpack Project Setup" tutorial checklist
   * https://www.croftsoft.com/library/tutorials/rust-webpack-project-setup/
 
