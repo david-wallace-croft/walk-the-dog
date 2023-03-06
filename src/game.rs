@@ -389,9 +389,9 @@ impl RedHatBoy {
     Rect {
       position: Point {
         x: self.state_machine.context().position.x
-          + sprite.sprite_source_size.x as i16,
+          + sprite.sprite_source_size.x,
         y: self.state_machine.context().position.y
-          + sprite.sprite_source_size.y as i16,
+          + sprite.sprite_source_size.y,
       },
       width: sprite.frame.w,
       height: sprite.frame.h,
