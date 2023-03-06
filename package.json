@@ -1,19 +1,20 @@
 {
-  "author": "David Wallace Croft <david@croftsoft.com>",
+  "author": "David Wallace Croft <david@CroftSoft.com>",
+  "devDependencies": {
+    "@wasm-tool/wasm-pack-plugin": "^1.6.0",
+    "@webpack-cli/serve": "^2.0.1",
+    "copy-webpack-plugin": "^5.1.2",
+    "rimraf": "^3.0.2",
+    "wasm-pack": "^0.10.3",
+    "webpack": "^5.75.0",
+    "webpack-dev-server": "^4.11.1"
+  },
   "license": "MIT",
-  "name": "rust-webpack-template",
-  "version": "0.1.0",
+  "name": "croftsoft-walk-the-dog",
   "scripts": {
     "build": "rimraf dist pkg && webpack",
-    "start": "rimraf dist pkg && webpack-dev-server --open -d",
-    "test": "cargo test && wasm-pack test --headless"
+    "start": "rimraf dist pkg && webpack serve",
+    "test": "cargo test && wasm-pack test --firefox --headless"
   },
-  "devDependencies": {
-    "@wasm-tool/wasm-pack-plugin": "^1.1.0",
-    "copy-webpack-plugin": "^5.0.3",
-    "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.3",
-    "webpack-dev-server": "^3.7.1",
-    "rimraf": "^3.0.0"
-  }
+  "version": "0.1.1-SNAPSHOT"
 }

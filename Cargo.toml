@@ -6,42 +6,34 @@ description = "My super awesome Rust, WebAssembly, and Webpack project!"
 edition = "2021"
 license = "MIT"
 name = "croftsoft-walk-the-dog"
+publish = false
 readme = "README.md"
-version = "0.1.0"
-
-[lib]
-crate-type = ["cdylib"]
-
-[profile.release]
-# This makes the compiled code faster and smaller, but it makes compiling slower,
-# so it's only enabled in release mode.
-lto = true
-
-[features]
+repository = "https://github.com/david-wallace-croft/walk-the-dog"
+version = "0.1.1-SNAPSHOT"
 
 [dependencies]
-anyhow = "1.0.51"
+anyhow = "1.0.66"
 async-trait = "0.1.52"
 console_error_panic_hook = "0.1.7"
 futures = "0.3.17"
 getrandom = { version = "0.2.3", features = ["js"] }
-js-sys = "0.3.55"
+js-sys = "0.3.60"
 rand = "0.8.4"
 serde = { version = "1.0.131", features = ["derive"] }
 # The `wasm-bindgen` crate provides the bare minimum functionality needed
 # to interact with JavaScript.
-wasm-bindgen = { version = "0.2.78", features = ["serde-serialize"] }
+wasm-bindgen = { version = "0.2.83", features = ["serde-serialize"] }
 wasm-bindgen-futures = "0.4.28"
 
 # `wee_alloc` is a tiny allocator for wasm that is only ~1K in code size
 # compared to the default allocator's ~10K. However, it is slower than the default
 # allocator, so it's not enabled by default.
-wee_alloc = { version = "0.4.2", optional = true }
+wee_alloc = { version = "0.4.5", optional = true }
 
 # The `web-sys` crate allows you to interact with the various browser APIs,
 # like the DOM.
 [dependencies.web-sys]
-version = "0.3.55"
+version = "0.3.60"
 features = [
   "AudioBuffer",
   "AudioBufferSourceNode",
@@ -66,5 +58,15 @@ features = [
 
 # These crates are used for running unit tests.
 [dev-dependencies]
-futures = "0.3.18"
+futures = "0.3.25"
 wasm-bindgen-test = "0.3.28"
+
+[features]
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+# This makes the compiled code faster and smaller, but it makes compiling slower,
+# so it's only enabled in release mode.
+lto = true
