@@ -806,13 +806,13 @@ impl Game for WalkTheDog {
     match self.machine {
       None => {
         let json: JsValue = browser::fetch_json("rhb.json").await?;
-        let sheet: Sheet = json.into_serde::<Sheet>()?;
+        let sheet: Sheet = serde_wasm_bindgen::from_value(json).unwrap();
         let background: HtmlImageElement = engine::load_image("BG.png").await?;
         let stone: HtmlImageElement = engine::load_image("Stone.png").await?;
         let tiles = browser::fetch_json("tiles.json").await?;
         let sprite_sheet = Rc::new(SpriteSheet::new(
           engine::load_image("tiles.png").await?,
-          tiles.into_serde::<Sheet>()?,
+          serde_wasm_bindgen::from_value(tiles).unwrap(),
         ));
         let image: HtmlImageElement = engine::load_image("rhb.png").await?;
         let audio = Audio::new()?;
