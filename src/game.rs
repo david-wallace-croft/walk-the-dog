@@ -195,7 +195,11 @@ impl Obstacle for Platform {
   }
 
   fn right(&self) -> i16 {
-    self.bounding_boxes().last().unwrap_or(&Rect::default()).right()
+    self
+      .bounding_boxes()
+      .last()
+      .unwrap_or(&Rect::default())
+      .right()
   }
 }
 

@@ -61,7 +61,9 @@ pub fn create_raf_closure(f: impl FnMut(f64) + 'static) -> LoopClosure {
 }
 
 pub fn document() -> Result<Document> {
-  window()?.document().ok_or_else(|| anyhow!("No Document Found"))
+  window()?
+    .document()
+    .ok_or_else(|| anyhow!("No Document Found"))
 }
 
 pub fn draw_ui(html: &str) -> Result<()> {
@@ -128,7 +130,9 @@ pub fn find_ui() -> Result<Element> {
   // TODO: Is this called twice on purpose or by accident?
   document().and_then(|_doc| {
     document().and_then(|doc| {
-      doc.get_element_by_id("ui").ok_or_else(|| anyhow!("UI element not found"))
+      doc
+        .get_element_by_id("ui")
+        .ok_or_else(|| anyhow!("UI element not found"))
     })
   })
 }

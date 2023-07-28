@@ -63,7 +63,9 @@ impl GameLoop {
         browser::request_animation_frame(f.borrow().as_ref().unwrap());
     }));
     browser::request_animation_frame(
-      g.borrow().as_ref().ok_or_else(|| anyhow!("GameLoop: Loop is None"))?,
+      g.borrow()
+        .as_ref()
+        .ok_or_else(|| anyhow!("GameLoop: Loop is None"))?,
     )?;
     Ok(())
   }
@@ -119,13 +121,15 @@ fn prepare_input() -> Result<UnboundedReceiver<KeyPress>> {
   let keyup_sender = Rc::clone(&keydown_sender);
   let onkeydown =
     browser::closure_wrap(Box::new(move |keycode: web_sys::KeyboardEvent| {
-      let _result =
-        keydown_sender.borrow_mut().start_send(KeyPress::KeyDown(keycode));
+      let _result = keydown_sender
+        .borrow_mut()
+        .start_send(KeyPress::KeyDown(keycode));
     }) as Box<dyn FnMut(web_sys::KeyboardEvent)>);
   let onkeyup =
     browser::closure_wrap(Box::new(move |keycode: web_sys::KeyboardEvent| {
-      let _result =
-        keyup_sender.borrow_mut().start_send(KeyPress::KeyUp(keycode));
+      let _result = keyup_sender
+        .borrow_mut()
+        .start_send(KeyPress::KeyUp(keycode));
     }) as Box<dyn FnMut(web_sys::KeyboardEvent)>);
   browser::window()?.set_onkeydown(Some(onkeydown.as_ref().unchecked_ref()));
   browser::window()?.set_onkeyup(Some(onkeyup.as_ref().unchecked_ref()));

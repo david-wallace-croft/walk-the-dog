@@ -11,9 +11,11 @@ fn connect_with_audio_node(
   buffer_source: &AudioBufferSourceNode,
   destination: &AudioDestinationNode,
 ) -> Result<AudioNode> {
-  buffer_source.connect_with_audio_node(destination).map_err(|err| {
-    anyhow!("Error connecting audio source to destination {:#?}", err)
-  })
+  buffer_source
+    .connect_with_audio_node(destination)
+    .map_err(|err| {
+      anyhow!("Error connecting audio source to destination {:#?}", err)
+    })
 }
 
 pub fn create_audio_context() -> Result<AudioContext> {
