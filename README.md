@@ -1,5 +1,10 @@
 # Walk the Dog
 
+[![MIT licensed][mit-badge]][mit-url]
+
+[mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
+[mit-url]: https://github.com/david-wallace-croft/walk-the-dog/blob/main/LICENSE.txt
+
 * You can see the Rust code compiled to WebAssembly and running in the browser
   * https://www.GameSpawn.com/arcade/walk-the-dog/
 * Adapted from the book "Game Development with Rust & WebAssembly" by Eric Smith
